@@ -42,11 +42,11 @@ def gameover(screen: pg.Surface) -> None:
 
 def init_bb_imgs() -> tuple[list[pg.Surface], list[int]]:
     bb_imgs = []
-    for r in range(1, 11):
+    for r in range(1, 11):#ばくだんを徐々に大きくする
         bb_img = pg.surface((20*r, 20*r))
         pg.draw.circle(bb_img, (255, 0, 0), (10*r, 10*r), 10*r)
         bb_imgs.append(bb_img)
-        bb_accs = [a for a in range(1, 11)]
+        bb_accs = [a for a in range(1, 11)]#爆弾の加速度
     return bb_imgs, bb_accs
 
 def main():
@@ -67,7 +67,7 @@ def main():
     bb_rct.centery = random.randint(0, HEIGHT)#爆弾縦座標
     
     #演習2：途中まで実装
-    
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: 
